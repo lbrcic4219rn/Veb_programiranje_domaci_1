@@ -3,7 +3,6 @@ package main;
 import java.util.Random;
 
 public class Student implements Comparable{
-    private long dolazak;
     private long arrival;
     private long len;
     private int id;
@@ -11,15 +10,10 @@ public class Student implements Comparable{
     public Student(int id) {
         this.id = id;
         long arrivalRand = new Random().nextInt(1000);
-        this.arrival = arrivalRand + System.currentTimeMillis();
-        this.dolazak = arrivalRand;
+        this.arrival = arrivalRand;
         this.len = new Random().nextInt(500) + 500;
     }
 
-
-    public long getDolazak() {
-        return dolazak;
-    }
 
     public long getArrival() {
         return arrival;
@@ -46,7 +40,6 @@ public class Student implements Comparable{
     @Override
     public String toString() {
         return "Student{" +
-                "dolazak=" + dolazak +
                 ", arrival=" + arrival +
                 ", len=" + len +
                 ", id=" + id +

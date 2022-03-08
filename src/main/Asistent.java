@@ -15,9 +15,9 @@ public class Asistent  implements Runnable{
         while(true){
             try {
                 Student s = Main.queue.take();
-                if(s.getArrival() - System.currentTimeMillis() > 0)
-                    Thread.sleep(s.getArrival() - System.currentTimeMillis());
-                long pocetakOdbrane = System.currentTimeMillis();
+                if(s.getArrival() + Main.start - System.currentTimeMillis() > 0)
+                    Thread.sleep(s.getArrival() + Main.start - System.currentTimeMillis());
+                long pocetakOdbrane = System.currentTimeMillis() - Main.start;
                 int grade = new Random().nextInt(5) + 5;
 
                 System.out.println(

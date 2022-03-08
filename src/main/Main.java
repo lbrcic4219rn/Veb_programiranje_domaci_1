@@ -15,6 +15,7 @@ public class Main {
     public static BlockingDeque<Student> queue = new LinkedBlockingDeque<>();
     public static List<Student> studentsList = new ArrayList<>();
     public static CyclicBarrier cyclicBarrier = new CyclicBarrier(2);
+    public static long start = 0;
 
     public static void main(String[] args) {
 
@@ -35,7 +36,9 @@ public class Main {
         }
 
         //Threads init
+
         ExecutorService pool = Executors.newFixedThreadPool(3);
+        start = System.currentTimeMillis();
         pool.submit(new Profesor(1));
         pool.submit(new Profesor(2));
         pool.submit(new Asistent(1));
